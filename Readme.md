@@ -34,7 +34,7 @@ Apply the config
       "type" : "float",
       "shell": "",
       "command": "/opt/dynatrace/oneagent/scripts/CountFiles.ksh /opt/dynatrace/oneagent/scripts/testcountfiles"
-    },
+    }
     
 ## Lab 2 - metric (float) - frequency every 2 minutes
 Test the script
@@ -51,7 +51,7 @@ Apply the config
       "type" : "float",
       "shell": "",
       "command": "/opt/dynatrace/oneagent/scripts/TestSchedule.ksh"
-    },
+    }
 
 ## Lab 3 - status_ko_ok_on_exit_status
 
@@ -74,7 +74,7 @@ Apply the config
       "timeout" : "10",
       "shell": "",
       "command": "/opt/dynatrace/oneagent/scripts/SystemctlServiceStatus.ksh apache2.service"
-    },
+    }
 
 After 2 minutes 
 
@@ -98,17 +98,17 @@ Test the script
   
 Apply the config
 
-     {
-      "metricname" : "httpd.service status on message",
-      "type" : "status_ko_ok_on_message",
-      "frequency" : "1m",
-      "timeout" : "30",
-      "shell": "",
-      "command": "/opt/dynatrace/oneagent/scripts/check_service_status.ksh httpd.service",
-      "ok_pattern" : "Active: (.*?) \\((.*?)\\) since (.*?);",
-      "ok_message" : "Service httpd is ${word1} in status ${word2} since ${word3}",
-      "ko_pattern" : "Active: inactive \\((.*?)\\)",
-      "ko_message" : "Service httpd is down with status ${word1}"
+    {
+     "metricname" : "httpd.service status on message",
+     "type" : "status_ko_ok_on_message",
+     "frequency" : "1m",
+     "timeout" : "30",
+     "shell": "",
+     "command": "/opt/dynatrace/oneagent/scripts/check_service_status.ksh httpd.service",
+     "ok_pattern" : "Active: (.*?) \\((.*?)\\) since (.*?);",
+     "ok_message" : "Service httpd is ${word1} in status ${word2} since ${word3}",
+    "ko_pattern" : "Active: inactive \\((.*?)\\)",
+     "ko_message" : "Service httpd is down with status ${word1}"
     }
 
 After 2 minutes 
@@ -124,20 +124,20 @@ Test the script
     
  Apply the config
 
- 	{
-		"metricname" : "cft_status",
-		"type" : "status_ok_warning_critical",
-		"frequency" : "1m",
-		"timeout" : "10",
-		"shell": "ksh",
-		"command": "/opt/dynatrace/oneagent/scripts/demo_metric.ksh",
-		"ok_pattern" : "Application: (.*?), Server: (.*?), Status: Ok",
-		"ok_message" : "${word1} ${word2} server is OK",
-		"warning_pattern" : "Application: (.*?), Server: (.*?), Status: Warning, ErrorCode: (.+)",
-		"warning_message" : "Nouveau warning message ${word1} ${word2} server is in Warning status. Error code is : ${word3}",
-		"critical_pattern" : "Application: (.*?), Server: (.*?), Status: Critical, ErrorCode: (.+)",
-		"critical_message" : "${word1} ${word2} server is in Critial status. Error code is : ${word3}"
-	}
+      {
+	"metricname" : "cft_status",
+	"type" : "status_ok_warning_critical",
+	"frequency" : "1m",
+	"timeout" : "10",
+	"shell": "",
+	"command": "/opt/dynatrace/oneagent/scripts/demo_metric.ksh",
+	"ok_pattern" : "Application: (.*?), Server: (.*?), Status: Ok",
+	"ok_message" : "${word1} ${word2} server is OK",
+	"warning_pattern" : "Application: (.*?), Server: (.*?), Status: Warning, ErrorCode: (.+)",
+	"warning_message" : "Nouveau warning message ${word1} ${word2} server is in Warning status. Error code is : ${word3}",
+	"critical_pattern" : "Application: (.*?), Server: (.*?), Status: Critical, ErrorCode: (.+)",
+	"critical_message" : "${word1} ${word2} server is in Critial status. Error code is : ${word3}"
+       }
     
 After 2 minutes : 
 
