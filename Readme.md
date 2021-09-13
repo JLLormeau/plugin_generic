@@ -21,10 +21,10 @@ Copy the script on
 
 Lab 1 - Script Count File
 
-- testthe script
+- test the script
 
-    cd /opt/dynatrace/oneagent/scripts
-    ./CountFiles.ksh /opt/dynatrace/oneagent/scripts/testcountfiles
+     cd /opt/dynatrace/oneagent/scripts
+     ./CountFiles.ksh /opt/dynatrace/oneagent/scripts/testcountfiles
     
 - Config1
 
