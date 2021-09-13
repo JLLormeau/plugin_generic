@@ -20,7 +20,7 @@ Copy the script on
   
 
 ## Lab 1 - Script Count File
-test the script
+Test the script
   
     cd /opt/dynatrace/oneagent/scripts
     ./CountFiles.ksh /opt/dynatrace/oneagent/scripts/testcountfiles
@@ -35,16 +35,19 @@ Apply the config
     }
 
 
-Script 2 
+## Lab 2 - Apache status
+
+Install appache 2 
 
     sudo apt install apache2
     sudo service apache2 start
-  
+
+Test the script
+
     cd /opt/dynatrace/oneagent/scripts
     /opt/dynatrace/oneagent/scripts/check_service_status.ksh httpd.service
   
-  
- Config 2
+Apply the config
  
     {
     "metricname" : "httpd.service status",
