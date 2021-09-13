@@ -1,14 +1,16 @@
 # Plugin Generic
 
 Git clone
-   git clone https://github.com/JLLormeau/plugin_generic/
-   cd plugin_generic
+
+    git clone https://github.com/JLLormeau/plugin_generic/
+    cd plugin_generic
    
  
 Install the plugin on linux host
-   sudo apt install unzip
-   sudo unzip custom.python.system_commands.zip -d /opt/dynatrace/oneagent/plugin_deployment/
-   sudo service oneagent restart
+   
+    sudo apt install unzip
+    sudo unzip custom.python.system_commands.zip -d /opt/dynatrace/oneagent/plugin_deployment/
+    sudo service oneagent restart
 
 Copy the script on
   sudo mkdir /opt/dynatrace/oneagent/scripts/
