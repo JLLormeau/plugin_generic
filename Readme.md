@@ -28,7 +28,7 @@ Test the script
 Apply the config
   
     {
-      "metricname" : "random",
+      "metricname" : "random script on linux",
       "frequency" : "1m",
       "timeout" : "10",
       "type" : "float",
