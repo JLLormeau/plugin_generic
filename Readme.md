@@ -22,12 +22,10 @@ Copy the script on
 Lab 1 - Script Count File
 
   - test the script
-
      cd /opt/dynatrace/oneagent/scripts
      ./CountFiles.ksh /opt/dynatrace/oneagent/scripts/testcountfiles
     
   - Config1
-
     {
     "metricname" : "File Count in /home/easytravel/testcountfiles",
     "type" : "float",
