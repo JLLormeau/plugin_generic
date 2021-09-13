@@ -147,4 +147,9 @@ After 2 minutes :
 5 minutes later :
 
      sudo cp demo_metric_critical.txt demo_metric.txt
+     
+ back to nomal status
+ 
+     sudo cp demo_metric_ok.txt demo_metric.txt
+ 
     
