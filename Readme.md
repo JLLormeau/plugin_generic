@@ -14,22 +14,24 @@ Install the plugin on linux host
 
 Copy the script on
 
-   sudo mkdir /opt/dynatrace/oneagent/scripts/
-   sudo cp -rf  ./scripts_linux/* /opt/dynatrace/oneagent/scripts/
-   chmod +x /opt/dynatrace/oneagent/scripts/*.ksh
+    sudo mkdir /opt/dynatrace/oneagent/scripts/
+    sudo cp -rf  ./scripts_linux/* /opt/dynatrace/oneagent/scripts/
+    chmod +x /opt/dynatrace/oneagent/scripts/*.ksh
   
 
 Scipt1 
-  cd /opt/dynatrace/oneagent/scripts
-  ./CountFiles.ksh /opt/dynatrace/oneagent/scripts/testcountfiles
 
-Config1 
-  {
-  "metricname" : "File Count in /home/easytravel/testcountfiles",
-  "type" : "float",
-  "shell": "ksh",
-  "command": "/opt/dynatrace/oneagent/scripts/CountFiles.ksh /opt/dynatrace/oneagent/scripts/testcountfiles"
-  }
+    cd /opt/dynatrace/oneagent/scripts
+    ./CountFiles.ksh /opt/dynatrace/oneagent/scripts/testcountfiles
+
+Config1
+
+   {
+   "metricname" : "File Count in /home/easytravel/testcountfiles",
+   "type" : "float",
+   "shell": "ksh",
+   "command": "/opt/dynatrace/oneagent/scripts/CountFiles.ksh /opt/dynatrace/oneagent/scripts/testcountfiles"
+   }
 
 
 Script 2
