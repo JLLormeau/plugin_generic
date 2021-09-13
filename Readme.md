@@ -27,7 +27,7 @@ Test the script
     
 Apply the config
   
-   {
+    {
       "metricname" : "File Count in /home/easytravel/testcountfiles",
       "frequency" : "1m",
       "timeout" : "10",
