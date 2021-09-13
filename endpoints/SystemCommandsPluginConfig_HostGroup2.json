@@ -1,0 +1,35 @@
+{
+    "scripts": [
+ 		{
+			"metricname" : "File Count in /home/easytravel/testcountfiles",
+			"type" : "float",
+			"shell": "ksh",
+			"command": "/opt/dynatrace/oneagent/scripts/CountFiles.ksh /opt/dynatrace/oneagent/scripts/testcountfiles"
+		},
+ 		{
+			"metricname" : "httpd.service status",
+			"type" : "status_ko_ok",
+			"frequency" : "1",
+			"shell": "ksh",
+			"command": "/opt/dynatrace/oneagent/scripts/check_service_status.ksh httpd.service",
+			"ok_pattern" : "Active: (.*?) \\((.*?)\\) since (.*?);",
+			"ok_message" : "Service httpd is ${word1} in status ${word2} since ${word3}",
+			"ko_pattern" : "Active: inactive \\((.*?)\\)",
+			"ko_message" : "Service httpd is down with status ${word1}"
+		},
+ 		{
+			"metricname" : "cft_status",
+			"type" : "status_ok_warning_critical",
+			"frequency" : "1",
+			"shell": "ksh",
+			"command": "/opt/dynatrace/oneagent/scripts/demo_metric.ksh",
+			"ok_pattern" : "Application: (.*?), Server: (.*?), Status: Ok",
+			"ok_message" : "${word1} ${word2} server is OK",
+			"warning_pattern" : "Application: (.*?), Server: (.*?), Status: Warning, ErrorCode: (.+)",
+			"warning_message" : "Nouveau warning message ${word1} ${word2} server is in Warning status. Error code is : ${word3}",
+			"critical_pattern" : "Application: (.*?), Server: (.*?), Status: Critical, ErrorCode: (.+)",
+			"critical_message" : "${word1} ${word2} server is in Critial status. Error code is : ${word3}"
+		}
+	]
+}
+

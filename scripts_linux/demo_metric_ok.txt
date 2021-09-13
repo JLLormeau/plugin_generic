@@ -1,0 +1,2 @@
+Application: nimsoft, Server: apache, Status: Ok
+

@@ -1,0 +1,131 @@
+{
+  "scripts": [
+    {
+      "metricname" : "File Count in /home/easytravel/testcountfiles",
+      "frequency" : "1m",
+      "timeout" : "10",
+      "type" : "float",
+      "shell": "",
+      "command": "/opt/dynatrace/oneagent/scripts/CountFiles.ksh /opt/dynatrace/oneagent/scripts/testcountfiles"
+    },
+    {
+      "metricname" : "Line Count in /home/easytravel/testcountlines/file.txt",
+      "frequency" : "1m",
+      "timeout" : "10",
+      "type" : "float",
+      "shell": "",
+      "command": "/opt/dynatrace/oneagent/scripts/CountLines.ksh /opt/dynatrace/oneagent/scripts/testcountlines/file.txt"
+    },
+    {
+      "metricname" : "Test every 1 minute",
+      "frequency" : "1m",
+      "timeout" : "10",
+      "type" : "float",
+      "shell": "",
+      "command": "/opt/dynatrace/oneagent/scripts/TestSchedule.ksh"
+    },
+    {
+      "metricname" : "Test every hour at 00",
+      "frequency" : "1h",
+      "starttime" : "00",
+      "timeout" : "10",
+      "type" : "float",
+      "shell": "",
+      "command": "/opt/dynatrace/oneagent/scripts/TestSchedule.ksh"
+    },
+    {
+      "metricname" : "Test every hour at 15",
+      "frequency" : "1h",
+      "starttime" : "15",
+      "timeout" : "10",
+      "type" : "float",
+      "shell": "",
+      "command": "/opt/dynatrace/oneagent/scripts/TestSchedule.ksh"
+    },
+    {
+      "metricname" : "Test every 2 hour at 30",
+      "frequency" : "2h",
+      "starttime" : "30",
+      "timeout" : "10",
+      "type" : "float",
+      "shell": "",
+      "command": "/opt/dynatrace/oneagent/scripts/TestSchedule.ksh"
+    },
+    {
+      "metricname" : "Test every 6 hour at 15:10",
+      "frequency" : "6h",
+      "starttime" : "15:10",
+      "timeout" : "10",
+      "type" : "float",
+      "shell": "",
+      "command": "/opt/dynatrace/oneagent/scripts/TestSchedule.ksh"
+    },
+    {
+      "metricname" : "Test every day at 15:10",
+      "frequency" : "d",
+      "starttime" : "15:10",
+      "timeout" : "10",
+      "type" : "float",
+      "shell": "",
+      "command": "/opt/dynatrace/oneagent/scripts/TestSchedule.ksh"
+    },
+    {
+      "metricname" : "httpd.service status on message",
+      "type" : "status_ko_ok_on_message",
+      "frequency" : "1m",
+      "timeout" : "30",
+      "shell": "",
+      "command": "/opt/dynatrace/oneagent/scripts/check_service_status.ksh httpd.service",
+      "ok_pattern" : "Active: (.*?) \\((.*?)\\) since (.*?);",
+      "ok_message" : "Service httpd is ${word1} in status ${word2} since ${word3}",
+      "ko_pattern" : "Active: inactive \\((.*?)\\)",
+      "ko_message" : "Service httpd is down with status ${word1}"
+    },
+    {
+      "metricname" : "httpd.service status on exit status",
+      "type" : "status_ko_ok_on_exit_status",
+      "frequency" : "5m",
+      "timeout" : "30",
+      "shell": "",
+      "command": "/opt/dynatrace/oneagent/scripts/SystemctlServiceStatus.ksh httpd.service"
+    },
+    {
+      "metricname" : "demo_metric",
+      "type" : "status_ok_warning_critical",
+      "frequency" : "1m",
+      "timeout" : "30",
+      "shell": "",
+      "command": "/opt/dynatrace/oneagent/scripts/demo_metric.ksh",
+      "ok_pattern" : "Application: (.*?), Server: (.*?), Status: Ok",
+      "ok_message" : "${word1} ${word2} server is OK",
+      "warning_pattern" : "Application: (.*?), Server: (.*?), Status: Warning, ErrorCode: (.+)",
+      "warning_message" : "${word1} ${word2} server is in Warning status. Error code is : ${word3}",
+      "critical_pattern" : "Application: (.*?), Server: (.*?), Status: Critical, ErrorCode: (.+)",
+      "critical_message" : "${word1} ${word2} server is in Critial status. Error code is : ${word3}"
+    },
+    {
+      "metricname" : "long execution without timeout",
+      "type" : "status_ko_ok_on_message",
+      "frequency" : "5m",
+      "timeout" : "250",
+      "shell": "",
+      "command": "/opt/dynatrace/oneagent/scripts/test_threads.ksh 200",
+      "ok_pattern" : "slept for (.*?) seconds",
+      "ok_message" : "Slept for ${word1} seconds",
+      "ko_pattern" : "No ko pattern",
+      "ko_message" : "No ko pattern"
+   },
+   {
+      "metricname" : "long execution with timeout",
+      "type" : "status_ko_ok_on_message",
+      "frequency" : "5m",
+      "timeout" : "250",
+      "shell": "",
+      "command": "/opt/dynatrace/oneagent/scripts/test_threads.ksh 300",
+      "ok_pattern" : "slept for (.*?) seconds",
+      "ok_message" : "Slept for ${word1} seconds",
+      "ko_pattern" : "No ko pattern",
+      "ko_message" : "No ko pattern"
+   }
+  ]
+}
