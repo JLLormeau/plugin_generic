@@ -1,4 +1,4 @@
-# Plugin Generic
+# Generic Extension - plugin system_commands
 
 Git clone
 
@@ -17,7 +17,8 @@ Copy the script on
     sudo mkdir /opt/dynatrace/oneagent/scripts/
     sudo cp -rf  ./scripts_linux/* /opt/dynatrace/oneagent/scripts/
     chmod +x /opt/dynatrace/oneagent/scripts/*.ksh
-  
+
+# Lab on host linux
 
 ## Lab 1 - metric (float)
 Test the script
