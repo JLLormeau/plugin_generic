@@ -19,7 +19,7 @@ Copy the script on
     chmod +x /opt/dynatrace/oneagent/scripts/*.ksh
   
 
-## Lab 1 - Script Count File
+## Lab 1 - metric (float)
 Test the script
   
     cd /opt/dynatrace/oneagent/scripts
@@ -36,8 +36,55 @@ Apply the config
       "command": "/opt/dynatrace/oneagent/scripts/CountFiles.ksh /opt/dynatrace/oneagent/scripts/testcountfiles"
     },
     
+## Lab 2 - metric (float) - frequency every 2 minutes
+Test the script
+  
+    cd /opt/dynatrace/oneagent/scripts
+    /opt/dynatrace/oneagent/scripts/TestSchedule.ksh
+
+Apply the config
+
+     {
+       "metricname" : "Test every 2 minutes",
+       "frequency" : "2m",
+       "timeout" : "10",
+       "type" : "float",
+       "shell": "",
+       "command": "/opt/dynatrace/oneagent/scripts/TestSchedule.ksh"
+     },
+
+## Lab 3 - status_ko_ok_on_exit_status
+
+Install appache 2 
+
+    sudo apt install apache2
+    sudo service apache2 start
+
+Test the script
+
+    cd /opt/dynatrace/oneagent/scripts
+    /opt/dynatrace/oneagent/scripts/SystemctlServiceStatus.ksh apache2.service
+  
+Apply the config
+
+    {
+      "metricname" : "apache2.service status on exit status",
+      "type" : "status_ko_ok_on_exit_status",
+      "frequency" : "1m",
+      "timeout" : "10",
+      "shell": "",
+      "command": "/opt/dynatrace/oneagent/scripts/SystemctlServiceStatus.ksh apache2.service"
+    },
+
+After 2 minutes 
+
+    sudo service apache2 stop
     
-## Lab 2 - Apache status
+After 5 minutes 
+
+    sudo service apache2 start
+
+## Lab 4 - status_ko_ok_on_message
 
 Install appache 2 
 
@@ -68,7 +115,7 @@ After 2 minutes
 
     sudo service apache2 stop
 
-## Lab 3 - cft_status
+## Lab 5 - status_ok_warning_critical
 
 Test the script
 
