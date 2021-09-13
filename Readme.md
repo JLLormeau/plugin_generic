@@ -50,17 +50,18 @@ Test the script
     /opt/dynatrace/oneagent/scripts/check_service_status.ksh apache2.service
   
 Apply the config
- 
-    {
-    "metricname" : "httpd.service status",
-    "type" : "status_ko_ok_on_exit_status",
-    "frequency" : "1",
-    "shell": "ksh",
-    "command": "/opt/dynatrace/oneagent/scripts/check_service_status.ksh apache2.service",
-    "ok_pattern" : "Active: (.*?) \\((.*?)\\) since (.*?);",
-    "ok_message" : "Service httpd is ${word1} in status ${word2} since ${word3}",
-    "ko_pattern" : "Active: inactive \\((.*?)\\)",
-    "ko_message" : "Service httpd is down with status ${word1}"
-    }
+
+     {
+      "metricname" : "httpd.service status on message",
+      "type" : "status_ko_ok_on_message",
+      "frequency" : "1m",
+      "timeout" : "30",
+      "shell": "",
+      "command": "/opt/dynatrace/oneagent/scripts/check_service_status.ksh httpd.service",
+      "ok_pattern" : "Active: (.*?) \\((.*?)\\) since (.*?);",
+      "ok_message" : "Service httpd is ${word1} in status ${word2} since ${word3}",
+      "ko_pattern" : "Active: inactive \\((.*?)\\)",
+      "ko_message" : "Service httpd is down with status ${word1}"
+    },
 
 ## Lab 3 - Apache status
