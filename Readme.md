@@ -28,13 +28,15 @@ Test the script
 Apply the config
   
     {
-    "metricname" : "File Count in /home/easytravel/testcountfiles",
-    "type" : "float",
-    "shell": "ksh",
-    "command": "/opt/dynatrace/oneagent/scripts/CountFiles.ksh /opt/dynatrace/oneagent/scripts/testcountfiles"
-    }
-
-
+      "metricname" : "File Count in /home/easytravel/testcountfiles",
+      "frequency" : "1m",
+      "timeout" : "10",
+      "type" : "float",
+      "shell": "",
+      "command": "/opt/dynatrace/oneagent/scripts/CountFiles.ksh /opt/dynatrace/oneagent/scripts/testcountfiles"
+    },
+    
+    
 ## Lab 2 - Apache status
 
 Install appache 2 
@@ -45,19 +47,20 @@ Install appache 2
 Test the script
 
     cd /opt/dynatrace/oneagent/scripts
-    /opt/dynatrace/oneagent/scripts/check_service_status.ksh httpd.service
+    /opt/dynatrace/oneagent/scripts/check_service_status.ksh apache2.service
   
 Apply the config
  
     {
     "metricname" : "httpd.service status",
-    "type" : "status_ko_ok",
+    "type" : "status_ko_ok_on_exit_status",
     "frequency" : "1",
     "shell": "ksh",
-    "command": "/opt/dynatrace/oneagent/scripts/check_service_status.ksh httpd.service",
+    "command": "/opt/dynatrace/oneagent/scripts/check_service_status.ksh apache2.service",
     "ok_pattern" : "Active: (.*?) \\((.*?)\\) since (.*?);",
     "ok_message" : "Service httpd is ${word1} in status ${word2} since ${word3}",
     "ko_pattern" : "Active: inactive \\((.*?)\\)",
     "ko_message" : "Service httpd is down with status ${word1}"
     }
 
+## Lab 3 - Apache status
