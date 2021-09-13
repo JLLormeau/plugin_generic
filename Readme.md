@@ -19,12 +19,14 @@ Copy the script on
     chmod +x /opt/dynatrace/oneagent/scripts/*.ksh
   
 
-Scipt1 
+Lab 1 - Script Count File
+
+- testthe script
 
     cd /opt/dynatrace/oneagent/scripts
     ./CountFiles.ksh /opt/dynatrace/oneagent/scripts/testcountfiles
-
-Config1
+    
+- Config1
 
     {
     "metricname" : "File Count in /home/easytravel/testcountfiles",
@@ -34,9 +36,10 @@ Config1
     }
 
 
-Script 2
+Script 2 
 
-    sudo apt-get install apache2
+    sudo apt install apache2
+    sudo service apache2 start
   
     cd /opt/dynatrace/oneagent/scripts
     /opt/dynatrace/oneagent/scripts/check_service_status.ksh httpd.service
