@@ -136,7 +136,7 @@ Test the script
 	"warning_message" : "Nouveau warning message ${word1} ${word2} server is in Warning status. Error code is : ${word3}",
 	"critical_pattern" : "Application: (.*?), Server: (.*?), Status: Critical, ErrorCode: (.+)",
 	"critical_message" : "${word1} ${word2} server is in Critial status. Error code is : ${word3}"
-     }
+    }
     
 After 2 minutes : 
 
