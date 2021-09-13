@@ -19,13 +19,13 @@ Copy the script on
     chmod +x /opt/dynatrace/oneagent/scripts/*.ksh
   
 
-Lab 1 - Script Count File
-  test the script
+##Lab 1 - Script Count File
+test the script
   
     cd /opt/dynatrace/oneagent/scripts
     ./CountFiles.ksh /opt/dynatrace/oneagent/scripts/testcountfiles
     
-  config
+Apply the config
   
     {
     "metricname" : "File Count in /home/easytravel/testcountfiles",
