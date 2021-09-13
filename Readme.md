@@ -19,7 +19,7 @@ Copy the script on
     chmod +x /opt/dynatrace/oneagent/scripts/*.ksh
   
 
-##Lab 1 - Script Count File
+## Lab 1 - Script Count File
 test the script
   
     cd /opt/dynatrace/oneagent/scripts
