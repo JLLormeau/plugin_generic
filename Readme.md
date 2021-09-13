@@ -23,17 +23,17 @@ Copy the script on
 Test the script
   
     cd /opt/dynatrace/oneagent/scripts
-    ./CountFiles.ksh /opt/dynatrace/oneagent/scripts/testcountfiles
+    ./CountFiles.ksh /opt/dynatrace/oneagent/scripts/random.ksh
     
 Apply the config
   
     {
-      "metricname" : "File Count in /home/easytravel/testcountfiles",
+      "metricname" : "random",
       "frequency" : "1m",
       "timeout" : "10",
       "type" : "float",
       "shell": "",
-      "command": "/opt/dynatrace/oneagent/scripts/CountFiles.ksh /opt/dynatrace/oneagent/scripts/testcountfiles"
+      "command": "/opt/dynatrace/oneagent/scripts/CountFiles.ksh /opt/dynatrace/oneagent/scripts/random.ksh"
     }
     
 ## Lab 2 - metric (float) - frequency every 2 minutes
