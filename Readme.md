@@ -33,7 +33,7 @@ Apply the config
       "timeout" : "10",
       "type" : "float",
       "shell": "",
-      "command": "/opt/dynatrace/oneagent/scripts/CountFiles.ksh /opt/dynatrace/oneagent/scripts/random.ksh"
+      "command": "/opt/dynatrace/oneagent/scripts/random.ksh"
     }
     
 ## Lab 2 - metric (float) - frequency every 2 minutes
