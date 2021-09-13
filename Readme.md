@@ -13,9 +13,10 @@ Install the plugin on linux host
     sudo service oneagent restart
 
 Copy the script on
-  sudo mkdir /opt/dynatrace/oneagent/scripts/
-  sudo cp -rf  ./scripts_linux/* /opt/dynatrace/oneagent/scripts/
-  chmod +x /opt/dynatrace/oneagent/scripts/*.ksh
+
+   sudo mkdir /opt/dynatrace/oneagent/scripts/
+   sudo cp -rf  ./scripts_linux/* /opt/dynatrace/oneagent/scripts/
+   chmod +x /opt/dynatrace/oneagent/scripts/*.ksh
   
 
 Scipt1 
