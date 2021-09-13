@@ -36,10 +36,10 @@ Config1
 
 Script 2
 
-   sudo apt-get install apache2
+    sudo apt-get install apache2
   
-   cd /opt/dynatrace/oneagent/scripts
-   /opt/dynatrace/oneagent/scripts/check_service_status.ksh httpd.service
+    cd /opt/dynatrace/oneagent/scripts
+    /opt/dynatrace/oneagent/scripts/check_service_status.ksh httpd.service
   
   
  Config 2
