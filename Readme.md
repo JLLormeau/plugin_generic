@@ -27,7 +27,7 @@ Test the script
     
 Apply the config
   
-    {
+   {
       "metricname" : "File Count in /home/easytravel/testcountfiles",
       "frequency" : "1m",
       "timeout" : "10",
@@ -44,14 +44,14 @@ Test the script
 
 Apply the config
 
-     {
-       "metricname" : "Test every 2 minutes",
-       "frequency" : "2m",
-       "timeout" : "10",
-       "type" : "float",
-       "shell": "",
-       "command": "/opt/dynatrace/oneagent/scripts/TestSchedule.ksh"
-     },
+    {
+      "metricname" : "Test every 2 minutes",
+      "frequency" : "2m",
+      "timeout" : "10",
+      "type" : "float",
+      "shell": "",
+      "command": "/opt/dynatrace/oneagent/scripts/TestSchedule.ksh"
+    },
 
 ## Lab 3 - status_ko_ok_on_exit_status
 
